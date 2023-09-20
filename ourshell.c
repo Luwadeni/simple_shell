@@ -32,8 +32,8 @@ data_struct->args = NULL;
 data_struct->status = 0;
 data_struct->counter = 1;
 
-for (num = 0; environ[num]; ++);
-
+for (num = 0; environ[num]; num++)
+;
 data_struct->_environ = malloc(sizeof(char *) * (num + 1));
 
 for (num = 0; environ[num]; num++)
